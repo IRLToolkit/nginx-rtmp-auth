@@ -1,0 +1,3 @@
+### pip requirements for nginx rtmp auth script
+configparser
+aiohttp

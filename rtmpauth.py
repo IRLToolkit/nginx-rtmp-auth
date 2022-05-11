@@ -1,5 +1,5 @@
 import logging
-import aiohttp
+from aiohttp import web
 import sys
 import json
 from configparser import ConfigParser
@@ -37,5 +37,6 @@ async def authhandle(request):
             return web.Response(status=401)
     return web.Response(status=404)
 
+app = web.Application()
 app.add_routes([web.post('/auth/', authhandle)])
 web.run_app(app, host=hostName, port=hostPort)
